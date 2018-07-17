@@ -1,0 +1,272 @@
+<app-bt-header></app-bt-header>
+<mat-horizontal-stepper [linear]="true">
+  <!-- step 1 -->
+  <mat-step [stepControl]="firstFormGroup">
+    <ng-template matStepLabel>Fill out your name</ng-template>
+    <mat-card>
+      <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+        <div class="text-center">
+          <mat-card-title>Create your
+            <span class="red_color">BLUETIE PIN</span>
+          </mat-card-title>
+          <p class="set_pin">A BLUETIE PIN will be your unique professional identity </p>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 mx-auto text-center">
+            <form [formGroup]="firstFormGroup" (ngSubmit)="storeBtPin(firstFormGroup.value)">
+              <mat-form-field class="text-center">
+                <input class="matinput" matInput placeholder="BLUETIE PIN" formControlName="blueTiePin" [(ngModel)]="useBTPinSuggestion">
+                <mat-icon [color]="color" matSuffix>{{btPinCheckUnCheck}}</mat-icon>
+              </mat-form-field>
+              <div class="suggestions">
+                Availabe:
+                <a class="bt_PIN" *ngFor="let bTPIN of btPinSuggestion; let i = index" (click)="useSuggestionBTPIN(bTPIN)">{{bTPIN}}
+                  <span *ngIf="i < 1">,</span>
+                </a>
+              </div>
+              <div>
+                <button matStepperNext mat-raised-button class="custom_btn" type="submit" color="primary" [disabled]="firstFormGroup.invalid || btnDisable">Next</button>
+              </div>
+              <a class="bt_a_tag" (click)="bTpindescription()">
+                <img src="./assets/images/prelaunchImages/README.jpg" alt="">
+                <p class="bt_p_tag">Know more about BLUETIE PIN</p>
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+    <mat-card [ngClass]="{'Btpin_class':Btpin_class}" class="bG_class">
+      <a class="closer_icon">
+        <mat-icon color="primary" (click)="bTsimplifyingclose()" matSuffix>clear</mat-icon>
+      </a>
+      <div class="col-xs-12 col-sm-12 col-md-12 mx-auto">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-5 pull-right">
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-7 pull-right">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6">
+
+                <p class="h3_sxe">Simplifying
+                  <br> professional
+                  <br> communication </p>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <img class="class_simple_pro" src="./assets/images/prelaunchImages/BlueTiePinSliderIcon1.png" alt="BT-IMAGE">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <img src="./assets/images/prelaunchImages/BlueiePinSliderIcon2.png" alt="PI" srcset="">
+                <ul class="ul_about_pin">
+                  <li class="color_yell">professional indentfier</li>
+                  <li>A convenient way to share your professional profile.</li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <img src="./assets/images/prelaunchImages/BlueTiePinSlidercon4.png" alt="PI" srcset="">
+                <ul class="ul_about_pin">
+                  <li class="color_gree">professional communocator</li>
+                  <li>Start one to one discussions with professionals anywhere, anytime</li>
+                </ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <img src="./assets/images/prelaunchImages/BlueTiePinSlider Icon5.png" alt="PI" srcset="">
+                <ul class="ul_about_pin">
+                  <li class=" color_gree ">encrypted sharing</li>
+                  <li>Secure your contact details, share your BlueTie Pin instead </li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6">
+                <img src="./assets/images/prelaunchImages/BlueTiePinSlidIcon3.png" alt="PI" srcset="">
+                <ul class="ul_about_pin">
+                  <li class="color_yell">Be Accessible</li>
+                  <li>Access and get accessed by world's professionals </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </mat-step>
+  <!-- step 2 -->
+  <mat-step [stepControl]="secondFormGroup">
+    <mat-card>
+      <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+        <div class="text-center">
+          <mat-card-title>Let's build
+            <span class="red_color">your profile</span>
+          </mat-card-title>
+          <p class="set_pin">Help us with your basic details</p>
+        </div>
+        <form [formGroup]="secondFormGroup" (ngSubmit)="saveUserDeatails(secondFormGroup.value)">
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 text-left">
+              <mat-form-field class="">
+                <input class="" name="firstname" matInput type="text" placeholder="First Name" formControlName="userFirstName">
+                <mat-error *ngIf="secondFormGroup.controls['userFirstName'].invalid  && (secondFormGroup.controls['userFirstName'].touched || secondFormGroup.controls['userFirstName'].dirty)">
+                  Please enter your First Name
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="">
+                <input class="" name="lastname" matInput type="text" placeholder="Last Name" formControlName="userLastName">
+                <mat-error *ngIf="secondFormGroup.controls['userLastName'].invalid  && (secondFormGroup.controls['userLastName'].touched || secondFormGroup.controls['userLastName'].dirty)">
+                  Please enter your Last Name
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="input_custom_profile_build">
+                <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Date of Birth" formControlName="userDOB">
+                <mat-datepicker-toggle color="primary" matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker color="primary" touchUi="true" #picker disabled="false"></mat-datepicker>
+                <mat-error *ngIf="secondFormGroup.controls['userDOB'].invalid  && (secondFormGroup.controls['userDOB'].touched || secondFormGroup.controls['userDOB'].dirty)">
+                  Please enter your Vaild Date Of Birth
+                </mat-error>
+              </mat-form-field>
+              <div class="spacer"></div>
+              <mat-radio-group>
+                <input class="radio_custom" style="display: none;" formControlName="userGender" [(ngModel)]="gender">
+                <mat-radio-button class="radio_custom" (click)="getGender('Male')" checked value="Male">Male</mat-radio-button>
+                <mat-radio-button class="radio_custom" (click)="getGender('Female')" value="Female">Female</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-6 text-left">
+              <mat-form-field class="input_custom_profile_build">
+                <input type="text" placeholder="Designation" matInput formControlName="userDesignation" [matAutocomplete]="autodesignations">
+                <mat-autocomplete #autodesignations="matAutocomplete">
+                  <mat-option *ngFor="let option of designations" [value]="option">
+                    {{ option }}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-error *ngIf="secondFormGroup.controls['userDesignation'].invalid  && (secondFormGroup.controls['userDesignation'].touched || secondFormGroup.controls['userDesignation'].dirty)">
+                  Please enter your Designation
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="input_custom_profile_build">
+                <input class="cname" name="companyname" matInput type="text" placeholder="Company name/ Self-employed" formControlName="userCompany">
+                <mat-error *ngIf="secondFormGroup.controls['userCompany'].invalid  && (secondFormGroup.controls['userCompany'].touched || secondFormGroup.controls['userCompany'].dirty)">
+                  Please enter your Company Name
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="input_custom_profile_build">
+                <input type="text" placeholder="BaseCity" matInput formControlName="basecity" [matAutocomplete]="cityName">
+                <mat-autocomplete #cityName="matAutocomplete">
+                  <mat-option *ngFor="let cityName of autobaseCity" [value]="cityName">
+                    {{ cityName }}
+                  </mat-option>
+                </mat-autocomplete>
+                <mat-icon color="primary" matSuffix>room</mat-icon>
+                <mat-error *ngIf="secondFormGroup.controls['basecity'].invalid  && (secondFormGroup.controls['basecity'].touched || secondFormGroup.controls['basecity'].dirty)">
+                  Please enter your City Name
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="text-center">
+            <button matStepperNext mat-raised-button class="custom_btn2" type="submit" color="primary" [disabled]="secondFormGroup.invalid">Next</button>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </mat-step>
+  <!-- step 3  -->
+  <mat-step [stepControl]="thirdFormGroup">
+    <mat-card>
+      <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+        <div class="text-center class_skills_parent">
+          <form [formGroup]="thirdFormGroup" (ngSubmit)="saveUserObjectives()">
+            <mat-card-title>Choose your
+              <span class="red_color">Networking Objectives</span>
+            </mat-card-title>
+            <p class="set_pin">Tell us the reasons for which you depend on networking</p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 text-left">
+                <mat-checkbox formControlName="userObjectives" *ngFor="let obj of firstHalf" (click)="storeObjectives(obj.objectiveID)">{{obj.objectiveTitle}}</mat-checkbox>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 text-left">
+                <mat-checkbox formControlName="userObjectives" *ngFor="let obj of secondHalf" (click)="storeObjectives(obj.objectiveID)">{{obj.objectiveTitle}}</mat-checkbox>
+              </div>
+              <!-- <div class="col-xs-12 col-sm-12 col-md-6 text-left"> -->
+              <!-- </div> -->
+            </div>
+            <div class="text-center">
+              <button matStepperNext mat-raised-button [disabled]="thirdFormGroup.invalid || btnDisableForm3" class="custom_btn2" type="submit"
+                color="primary">Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </mat-step>
+  <!-- step 4 -->
+  <mat-step [stepControl]="forthFormGroup">
+    <mat-card>
+      <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+        <div class="text-center">
+          <mat-card-title>Choose any 5
+            <span class="red_color">Skills</span>
+          </mat-card-title>
+          <p class="set_pin"> Tell us the things you’re great at</p>
+          <form [formGroup]="forthFormGroup" (ngSubmit)="saveUserSkills()">
+            <div class="class_masded">
+              <div class="row marlr0">
+                <div class="col-xs-12 col-sm-12 col-md-6 mx-auto text-left">
+                  <mat-form-field class="example-full-width">
+                    <input type="text" [(ngModel)]="clear" placeholder="Select Skills (Eg. Web developer)" aria-label="skillset" matInput formControlName="userSkills"
+                      [matAutocomplete]="skillsauto">
+                    <mat-autocomplete #skillsauto="matAutocomplete">
+                      <mat-optgroup *ngFor="let industrys of skillsWithIndustry" [label]="industrys.industry" [disabled]="industrys.disabled">
+                        <mat-option (click)="addSkillWithOutIndustry(skill)" *ngFor="let skill of industrys.skill" [value]="skill" [disabled]="isAddedInArr(skill)">
+                          {{ skill }}
+                        </mat-option>
+                      </mat-optgroup>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 text-left">
+                  <mat-chip-list *ngFor="let skill of userSkillsArr">
+                    <mat-chip color="primary">
+                      <mat-icon matChipRemove (click)="removerSkillsChip(skill)">cancel</mat-icon>{{skill}}
+                    </mat-chip>
+                    <div class="spacer"></div>
+                  </mat-chip-list>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button matStepperNext mat-raised-button [disabled]="btnDisableForm4" class="custom_btn2" type="submit" color="primary">Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mat-card>
+  </mat-step>
+  <!-- step 5 -->
+  <mat-step>
+    <mat-card>
+      <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+        <div class="text-center register_masddqASWD">
+          <mat-card-title>
+            <span class="red_color">Thank You</span> for registering with
+          </mat-card-title>
+          <div class="bt_logo bt_confirmation_log">
+            <img src="./assets/images/prelaunchImages/BTlogo.png" alt="BluetieLogo">
+          </div>
+          <p>We’ve sent you an email. Follow the instructions to complete your participation</p>
+          To know more <a href="https://developers.bluetie.in"> click here</a>
+        </div>
+      </div>
+    </mat-card>
+  </mat-step>
+
+
+</mat-horizontal-stepper>

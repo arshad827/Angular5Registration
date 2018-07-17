@@ -1,0 +1,85 @@
+<mat-card>
+  <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+    <div class="text-center">
+      <mat-card-title class="logo_color">Choose a contest to participate
+      </mat-card-title>
+    </div>
+    <div class="parent_chooser">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <a routerLink="social" class="select-item" (click)="setExplorevalue('Seed Funding')">
+            <div class="img-holder">
+              <img src="./assets/images/prelaunchImages/choose/Seed-Funding.png" class="responsive-img">
+            </div>
+            <div class="content_holder text-center">
+              Get a seed funding
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <a routerLink="chooseMentor" class="select-item" (click)="setExplorevalue('Mentorship')">
+            <div class="img-holder">
+              <img src="./assets/images/prelaunchImages/choose/Mentorship.png" class="responsive-img">
+            </div>
+            <div class="content_holder text-center">
+              Get mentored
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <a routerLink="social" class="select-item" [ngClass]="{'active': isClicked}" (click)="setExplorevalue('App Testing')">
+            <div class="img-holder">
+              <img src="./assets/images/prelaunchImages/choose/Testing.png" class="responsive-img">
+            </div>
+            <div class="content_holder text-center">
+              Test to Win
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3">
+          <a routerLink="social" class="select-item" (click)="setExplorevalue('Explore')">
+            <div class="img-holder">
+              <img src="./assets/images/prelaunchImages/explore.png" class="responsive-img">
+            </div>
+            <div class="content_holder text-center">
+              Explore
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 text-center">
+          <a routerLink="mail" (click)="getExplorevalue('App Testing')" class="redirect_choose">
+            <img src="./assets/images/prelaunchImages/App Testing Grey.svg" alt="App Testing" class="img_selector">
+            <p>App Testing</p>
+          </a>
+        <p class="slots_left"> Only {{appTesting}} slots left !</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 text-center">
+          <a routerLink="mail" (click)="getExplorevalue('Seed Funding')" class="redirect_choose">
+            <img  src="./assets/images/prelaunchImages/Seed Funding Grey.svg" alt="App Testing" class="img_selector">
+            <p>Seed Funding</p>
+          </a>
+        <p class="slots_left"> Only {{seedFunnding}} slots left !</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 text-center">
+          <a routerLink="chooseMentor" (click)="getExplorevalue('Mentorship')" class="redirect_choose">
+            <img  src="./assets/images/prelaunchImages/Mentorship Grey.svg" alt="App Testing" class="img_selector">
+            <p>Mentorship</p>
+          </a>
+        <p class="slots_left"> Only {{mentorship}} slots left !</p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 text-center">
+          <a routerLink="mail" (click)="getExplorevalue('Explore')" class="redirect_choose">
+            <img src="./assets/images/prelaunchImages/VectorSmartObject.jpg" alt="Explore" class="img_selector">
+            <p>Explore</p>
+          </a>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+  <div *ngFor="let p of var1">
+    <div>{{p}}</div>
+  </div>
+</mat-card>

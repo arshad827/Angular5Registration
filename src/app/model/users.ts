@@ -1,0 +1,46 @@
+export class User {
+  userID?: number;
+  blueTiePin?: string;
+  facebookID?: number;
+  googlePlusID?: number;
+  linkedInID?: number;
+  userName?: string;
+  seoUri?: string;
+  userFirstName?: string;
+  userLastName?: string;
+  userEmail?: string;
+  countryCode?: string;
+  userMobile?: string;
+  userPass?: string;
+  userDOB?: Date;
+  userGender?: string;
+  userImage?: string;
+  userCountry?: string;
+  userState?: string;
+  userCity?: string;
+  userAbout?: string;
+  userLat?: any;
+  userLong?: any;
+  isProfile?: boolean;
+  authorizationKey?: any;
+  resetPass?: any;
+  verifyKey?: any;
+  isVerify?: boolean;
+  isPublish?: boolean;
+  pakageID?: number;
+  subscriptionType?: number;
+  pushSomeoneSendMessage?: number;
+  pushBluetieSendMessage?: number;
+  pushSomeoneSendRequest?: number;
+  pushSomeoneAcceptRequest?: number;
+  emailSomeoneSendMessage?: number;
+  emailBluetieSendMessage?: number;
+  emailSomeoneSendRequest?: number;
+  emailSomeoneAcceptRequest?: number;
+  dateAdded?: DateTimeFormat;
+  dateModified?: DateTimeFormat;
+  status?: boolean;
+  remmemberMe?: boolean;
+  xAction?: string;
+
+}

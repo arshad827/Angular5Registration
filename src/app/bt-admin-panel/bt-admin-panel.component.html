@@ -1,0 +1,7 @@
+<div class="main_background">
+  <app-header (toggler)="show2Clicked = $event"></app-header>
+
+  <app-sidebar [(passedValue)] = "show2Clicked" ></app-sidebar>
+
+  <app-content [(passedValue)] = "show2Clicked"></app-content>
+</div>

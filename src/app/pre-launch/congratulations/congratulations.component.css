@@ -1,0 +1,78 @@
+mat-card {
+  width: 1000px;
+  margin: 15px auto 125px auto;
+  padding: 15px;
+}
+
+.parent_chooser {
+  margin: 20px 0px 20px
+}
+
+.redirect_choose {
+  text-align: center;
+}
+
+mat-card-title {
+  font-family: 'Fira Sans' !important;
+  font-weight: 300;
+  font-size: 30px;
+  margin: 0
+}
+
+.counter {
+  font-size: 16px
+}
+
+.red_color {
+  color: #fd3259;
+}
+
+.redirect_choose {
+  color: #999999
+}
+
+.redirect_choose:hover {
+  color: #428bca
+}
+
+.parent_chooser p {
+  font-size: 20px;
+  margin-top: 15px;
+  font-family: 'Fira Sans';
+  font-weight: 300;
+}
+
+.register_masddqASWD {
+  padding: 100px 0px;
+}
+
+.bt_confirmation_log {
+  padding: 15px 0px;
+}
+
+
+.class_adcer{
+  font-size: 26px
+}
+/* Media Query */
+
+@media(max-width:1080px) {
+  mat-card {
+    width: 100%;
+  }
+  .parent_container {
+    padding: 0px 15px;
+  }
+  .mat-card-title {
+    font-size: 24px
+  }
+  .parent_chooser {
+    margin: 25px 0px
+  }
+  .class_adcer{
+    font-size: 16px
+  }
+  .bt_confirmation_log img{
+    width: 120px
+  }
+}

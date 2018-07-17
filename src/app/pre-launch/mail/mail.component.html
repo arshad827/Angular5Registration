@@ -1,0 +1,26 @@
+<app-bt-header></app-bt-header>
+<mat-card>
+  <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+    <div class="text-center">
+      <mat-card-title class="logo_color">Enter your email to register on BlueTie
+      </mat-card-title>
+    </div>
+    <div class="parent_chooser">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 mx-auto text-center">
+          <form class="c4rdsa" [formGroup]="emailformGroup" (ngSubmit)="storeValues(emailformGroup.value)">
+            <mat-form-field class="text-center">
+              <input class="matinput" matInput placeholder="Email Address" formControlName="emailaddress" name="email" type="email">
+              <mat-error *ngIf="emailformGroup.controls['emailaddress'].invalid  && (emailformGroup.controls['emailaddress'].touched || emailformGroup.controls['emailaddress'].dirty)">
+                Please enter a valid Email Address
+              </mat-error>
+            </mat-form-field>
+            <div>
+              <button mat-raised-button  class="custom_btn" type="submit" color="primary" [disabled]=" emailformGroup.invalid|| btnDisable">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,79 @@
+        <div class="wrapper">
+          <div class="margin_toppper_30">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar" [ngClass]="{
+              'active' :passedValue
+            }" > 
+                <div class="sidebar-header">
+                  <div>
+                  <img src="">
+                    <h3>{{adminDisplayName}}</h3>
+                    <!-- <p>{{passedValue}}</p> -->
+                    <strong>{{fullshortname}}</strong>
+                </div>
+              </div>
+
+                <ul class="list-unstyled components internal_menuitems">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-user"></i>
+                            User's Count
+                        </a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="#">Completed Users</a></li>
+                            <li><a href="#">Not Completed Users</a></li>
+                            <li><a href="#">Male Users</a></li>
+                            <li><a href="#">FeMale Users</a></li>
+                            <li><a href="#">Not Set Users</a></li>
+                            <li><a href="#">Ios Platform Users</a></li>
+                            <li><a href="#">Android Platform Users</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            Pages
+                        </a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <i class="glyphicon glyphicon-duplicate"></i>
+                            Pages
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-link"></i>
+                            Pages
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-paperclip"></i>
+                            FPagesAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Pages
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="list-unstyled CTAs">
+                    <!-- <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Log Out</a></li> -->
+                    <!-- <button mat-raised-button class="logo_color">Log Out</button> -->
+                    <button class="logo_color" (click)="logOut()"  mat-raised-button>Log Out</button>
+                </ul>
+
+            </nav>
+
+             
+        </div>
+        </div>  
+
+

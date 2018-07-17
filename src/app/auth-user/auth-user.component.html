@@ -1,0 +1,144 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+      <!-- {{(authState | async).authenticated}} -->
+      <h1>User Registration</h1>
+      <form [formGroup]="userRegistrationForm" (ngSubmit)="userRegForm(userRegistrationForm.value)">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="First Name" formControlName="userFirstName">
+          <mat-error *ngIf="userRegistrationForm.controls['userFirstName'].invalid  && (userRegistrationForm.controls['userFirstName'].touched || userRegistrationForm.controls['userFirstName'].dirty)">
+            Please enter your First Name
+          </mat-error>
+          <!-- {{userRegistrationForm.controls['userFirstName'].invalid  && (userRegistrationForm.controls['userFirstName'].touched || userRegistrationForm.controls['userFirstName'].dirty)}} -->
+
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last Name" formControlName="userLastName">
+          <mat-error *ngIf="userRegistrationForm.controls['userLastName'].invalid  && (userRegistrationForm.controls['userLastName'].touched || userRegistrationForm.controls['userLastName'].dirty)">
+            Please enter your Last Name
+          </mat-error>
+          <!-- {{userRegistrationForm.controls['userLasttName'].invalid  && (userRegistrationForm.controls['userLasttName'].touched || userRegistrationForm.controls['userLasttName'].dirty)}} -->
+
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="userEmail" formControlName="userEmail">
+          <mat-error *ngIf="userRegistrationForm.controls['userEmail'].invalid  && (userRegistrationForm.controls['userEmail'].touched || userRegistrationForm.controls['userEmail'].dirty)">
+            Please enter a Valid Email
+          </mat-error>
+          {{userRegistrationForm.controls['userEmail'].invalid && (userRegistrationForm.controls['userEmail'].touched || userRegistrationForm.controls['userEmail'].dirty)}}
+
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="blueTiePin" formControlName="blueTiePin">
+          <mat-error *ngIf="userRegistrationForm.controls['blueTiePin'].invalid  && (userRegistrationForm.controls['blueTiePin'].touched || userRegistrationForm.controls['blueTiePin'].dirty)">
+            Please enter a Valid blueTiePin
+          </mat-error>
+          {{userRegistrationForm.controls['blueTiePin'].invalid && (userRegistrationForm.controls['blueTiePin'].touched || userRegistrationForm.controls['blueTiePin'].dirty)}}
+
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="userPass" formControlName="userPass">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="userRegistrationForm.controls['userPass'].invalid  && (userRegistrationForm.controls['userPass'].touched || userRegistrationForm.controls['userPass'].dirty)">
+            Please enter your Password
+          </mat-error>
+          <!-- {{userRegistrationForm.controls['userLasttName'].invalid  && (userRegistrationForm.controls['userLasttName'].touched || userRegistrationForm.controls['userLasttName'].dirty)}} -->
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="baseCity" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let cityName of baseCity" [value]="cityName">
+              {{ cityName }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+
+        <!-- Working -->
+
+        <!-- <mat-form-field class="example-full-width"> -->
+        <!-- <input type="text" placeholder="Pick one" aria-label="skillset" matInput formControlName="baseCity" [matAutocomplete]="auto"> -->
+        <!-- <mat-autocomplete #auto="matAutocomplete"> -->
+        <!-- <div *ngFor="let countryNames of baseCity"> -->
+        <!-- <mat-optgroup *ngFor="let statesName of countryNames.states"> -->
+        <!-- {{statesName.stateName}} -->
+        <!-- <mat-option *ngFor="let cityName of statesName.cityName"> -->
+        <!-- {{cityName}} -->
+        <!-- </mat-option> -->
+        <!-- {{statesName | json}} -->
+        <!-- </mat-optgroup> -->
+
+        <!-- </div> -->
+        <!-- </mat-autocomplete> -->
+        <!-- </mat-form-field> -->
+
+        <!-- <div *ngFor="let countryNames of baseCity"> -->
+        <!-- <div *ngFor="let statesName of countryNames.states"> -->
+
+        <!-- {{statesName.stateName}} -->
+        <!-- <div *ngFor="let cityName of statesName.cityName"> -->
+        <!-- {{cityName}} -->
+        <!-- </div> -->
+        <!-- {{statesName | json}} -->
+        <!-- </div> -->
+        <!-- </div> -->
+
+
+        <button mat-raised-button class="btn_custom" color="primary" [disabled]="userRegistrationForm.invalid || btnDisable">Primary</button>
+      </form>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+      <h1 class="user_login">User Login</h1>
+      <form [formGroup]="userLoginForm" (ngSubmit)="userAuth(userLoginForm.value)">
+
+        <mat-form-field class="example-full-width">
+
+          <input matInput placeholder="userEmail" formControlName="userEmail">
+          <mat-error *ngIf="userLoginForm.controls['userEmail'].invalid  && (userLoginForm.controls['userEmail'].touched || userLoginForm.controls['userEmail'].dirty)">
+            Please enter a Valid Email
+          </mat-error>
+
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="userPass" formControlName="userPass">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="userLoginForm.controls['userPass'].invalid  && (userLoginForm.controls['userPass'].touched || userLoginForm.controls['userPass'].dirty)">
+            Please enter your Password
+          </mat-error>
+        </mat-form-field>
+        <mat-checkbox formControlName="remmemberMe">Remmember Me</mat-checkbox>
+        <button mat-raised-button class="btn_custom" color="primary" [disabled]="userLoginForm.invalid || btnDisable">Primary</button>
+        {{btnDisable}}
+      </form>
+    </div>
+  </div>
+</div>
+
+<form [formGroup]='test'>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Key" #key1 formControlName='key1'>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Key" #key2 formControlName='key2'>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Key" #key3 formControlName='key3'>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" placeholder="Key" #key4 formControlName='key4'>
+  </mat-form-field>
+</form>
+
+
+
+<div class="form-group">
+  <label for="file">Choose File</label>
+  <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+</div>
+
+{{baseCity | json}}
+

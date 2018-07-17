@@ -1,0 +1,26 @@
+<div class="main_background">
+  <mat-card  [@divState]="in" class="bluetieLogin-card">
+    <mat-card-header>
+      <div mat-card-avatar class="btLogin-header-image"></div>
+    </mat-card-header>
+    <img mat-card-image class="bt_loginLogo" src="https://s3.ap-south-1.amazonaws.com/bluetie.live.web/images/logo/BlueTieStaticWebsiteLogo.png"
+      alt="Bluetie Logo">
+    <mat-card-content>
+      <form class="example-form" [formGroup]="loginform" (ngSubmit)="adminLogin(loginform.value)">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="UserName" formControlName="userName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Enter your password" formControlName="passWord" [type]="hide ? 'password' : 'text'">
+          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </mat-form-field>
+        <button class="logo_color" type="submit" [disabled]="loginform.invalid" mat-raised-button>Log In</button>
+        <mat-error *ngIf="!hide1">
+            Invalid Credentials, Please try Again!
+          </mat-error>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>

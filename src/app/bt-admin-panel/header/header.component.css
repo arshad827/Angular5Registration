@@ -1,0 +1,43 @@
+.navbar_custom {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  background: #418dcb;
+  margin-bottom: 0;
+  border-radius: 0
+}
+
+.opner_size_c {
+  font-size: 18px
+}
+
+.navbar-toggler-icon {
+  font-size: 18px
+}
+
+.navbar_custom .collapse ul li a,
+.navbar-brand {
+  color: #fff
+}
+
+.navbar_custom .collapse ul li a:hover,
+.navbar-brand:hover {
+  color: #fff !important;
+  opacity: 0.8
+}
+
+.btn_custom_opener_panel {
+  background: transparent;
+  border-color: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 5px 5px;
+  padding-bottom: 0;
+}
+
+.material-icons_masd4r23 {
+  font-size: 32px
+}
+
+.navbar_custom::before,
+.navbar_custom::after {
+  content: none;
+}

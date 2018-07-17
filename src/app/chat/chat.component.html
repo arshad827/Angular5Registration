@@ -1,0 +1,9 @@
+<form [formGroup]="chatForm" (ngSubmit)="sendMeaage(chatForm.value)">
+  
+  <mat-form-field class="example-full-width">
+    <input matInput #message maxlength="256" placeholder="Message" formControlName="message">
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="chatForm.invalid">Send</button>
+</form>
+
+{{messageReceived}}

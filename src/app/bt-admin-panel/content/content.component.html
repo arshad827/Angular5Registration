@@ -1,0 +1,157 @@
+<div id="content" [ngClass]="{'contentmove_left' :passedValue}">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title class="marb0">
+            User Details:
+          </mat-card-title>
+          <mat-card-subtitle class="marb0">
+            <mat-form-field>
+              <mat-select [(value)]="selected" (change)="onUserChange()" placeholder="Users">
+                <mat-option *ngFor="let user of userCountCombination" [value]="user.value">
+                  {{ user.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <canvas id="canvas"></canvas>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="logo_color" (click)=onRefresh() mat-raised-button>            
+                <mat-icon  mat-list-icon>refresh</mat-icon>Refresh            
+            </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="spacer"></div>
+    <div class="col-xs-12 col-md-6">
+      <mat-card class="example-card" [@divState]="in">
+        <mat-card-header>
+          <mat-card-title>User's Data</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <h3 mat-subheader>Today</h3>
+            <mat-list-item [@divState]="in">
+              <mat-icon mat-list-icon>perm_identity</mat-icon>
+              <h4 mat-line>24,5050</h4>
+              <p mat-line>20-10-78</p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <h3 mat-subheader>Yesterday</h3>
+            <mat-list-item>
+              <mat-icon mat-list-icon>perm_identity</mat-icon>
+              <h4 mat-line>24,5050</h4>
+              <p mat-line> 20-10-78</p>
+            </mat-list-item>
+          </mat-list>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="logo_color" mat-raised-button>            
+              <mat-icon mat-list-icon>refresh</mat-icon>Refresh            
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+  <div class="dspacer"></div>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <mat-card class="example-card" [@divStateLine]="in">
+        <mat-card-header>
+          <mat-card-title class="marb0">
+            User Details:
+          </mat-card-title>
+          <mat-card-subtitle class="marb0">
+            <mat-form-field>
+              <mat-select [(value)]="selected" (change)="onUserChange()">
+                <mat-option *ngFor="let user of userCountCombination" [value]="user.value">
+                  {{ user.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-select [(value)]="selected" placeholder="Month">
+                <mat-option *ngFor="let user of userCountMonthCombination" [value]="user.value">
+                  {{ user.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <canvas id="userlinechart"></canvas>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="logo_color" mat-raised-button>            
+                    <mat-icon  mat-list-icon>refresh</mat-icon>Refresh            
+                </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  <div class="dspacer"></div>
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>UserDetail Filter</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="example-header">
+            <mat-form-field class="mat-filer_user">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Users">
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div class="dspacer"></div>
+      <div class="example-container mat-elevation-z8">
+
+        <mat-table [dataSource]="dataSource" matSort>
+
+          <!-- ID Column -->
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+          </ng-container>
+
+          <!-- Progress Column -->
+          <ng-container matColumnDef="progress">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+          </ng-container>
+
+          <!-- Color Column -->
+          <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Color </mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;">
+          </mat-row>
+        </mat-table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+      </div>
+
+
+      <!-- Copyright 2018 Google Inc. All Rights Reserved.
+              Use of this source code is governed by an MIT-style license that
+              can be found in the LICENSE file at http://angular.io/license -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<app-bt-header></app-bt-header>
+<mat-card>
+  <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
+    <div class="text-center">
+      <mat-card-title>Select an account to <span class="red_color">register on BlueTie</span></mat-card-title>
+    </div>
+    <div class="parent_chooser">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-4 social_buttons">
+          <button (click)="socialSignIn('google')" mat-raised-button color="primary" class="btn_new_ggoog_custom">	
+          <i class="fa fa-google-plus" aria-hidden="true"></i> 
+          <span class="span_bord_r"></span> <span>Google</span>
+        </button>
+
+          <button (click)="socialSignIn('facebook')" mat-raised-button color="primary" class="btn_new_faceb_custom">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <span class="span_bord_r"></span>
+          <span>Facebook</span>
+        </button>
+
+          <button (click)="socialSignInLinkedin()" mat-raised-button color="primary" class="btn_new_linkd_custom">
+          <i class="fa fa-linkedin" aria-hidden="true"></i> 
+          <span class="span_bord_r"></span>
+          <span>Linkedin</span>
+        </button>
+        </div>
+        <div class=" content text-center">
+          <mat-card-content>Don't worry! We don’t post anything without your permission</mat-card-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

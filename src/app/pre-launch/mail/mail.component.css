@@ -1,0 +1,83 @@
+mat-card {
+  width: 1000px;
+  margin: 15px auto 125px auto;
+  padding: 15px;
+}
+
+.parent_chooser {
+  margin: 20px 0px 20px
+}
+
+.redirect_choose {
+  text-align: center;
+}
+
+mat-card-title {
+  font-family: 'Fira Sans' !important;
+  font-weight: 300;
+  font-size: 30px;
+  margin: 0
+}
+
+.counter {
+  font-size: 16px
+}
+
+.red_color {
+  color: #fd3259;
+}
+
+.redirect_choose {
+  color: #999999
+}
+
+.redirect_choose:hover {
+  color: #428bca
+}
+
+.parent_chooser p {
+  font-size: 20px;
+  margin-top: 15px;
+  font-family: 'Fira Sans';
+  font-weight: 300;
+}
+
+.matinput {
+  text-align: center
+}
+
+.c4rdsa {
+  padding: 70px 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.custom_btn {
+  font-size: 21px;
+  line-height: 45px;
+  font-weight: 300;
+  border-radius: 0;
+  width: 75%;
+  margin: 65px auto 20px;
+  background-color: #428bca
+}
+
+
+/* Media Query */
+
+@media(max-width:1080px) {
+  mat-card {
+    width: 100%;
+  }
+  .parent_container {
+    padding: 0px 15px;
+  }
+  .mat-card-title {
+    font-size: 24px
+  }
+  .parent_chooser {
+    margin: 25px 0px
+  }
+}

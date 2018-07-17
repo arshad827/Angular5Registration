@@ -1,0 +1,257 @@
+<app-bt-header></app-bt-header>
+<mat-card>
+  <div class="col-xs-12 col-sm-12 col-md-10 mx-auto mentor_list">
+    <div class="text-center">
+      <mat-card-title class="logo_color">Select a mentor of your choice
+      </mat-card-title>
+    </div>
+    
+    <div class="parent_cho``oser">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 padlr0">
+          <a class="a_patcher" (click)="getMentor('HARSHIT SHAH 1')" routerLink="/social">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 text-center">
+                <img class="mentor_img" src="./assets/images/prelaunchImages/Bluetest2.jpg" alt="MENTOR" srcset="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8">
+                <ul class="ul_class_mentor">
+                  <li>HARSHIT SHAH 1</li>
+                  <li>Design -Brand</li>
+                </ul>
+                <p class="km" (click)="mentorDetails($event, 'me-1')">Know More</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 padlr0">
+          <a class="a_patcher" (click)="getMentor('HARSHIT SHAH 2')"  routerLink="/social">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 text-center">
+                <img class="mentor_img" src="./assets/images/prelaunchImages/Bluetest2.jpg" alt="MENTOR" srcset="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8">
+                <ul class="ul_class_mentor">
+                  <li>HARSHIT SHAH 2</li>
+                  <li>Design -Brand</li>
+                </ul>
+                <p class="km" (click)="mentorDetails($event, 'me-2')">Know More</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 padlr0">
+          <a class="a_patcher" (click)="getMentor('HARSHIT SHAH 3')"  routerLink="/social">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 text-center">
+                <img class="mentor_img" src="./assets/images/prelaunchImages/Bluetest2.jpg" alt="MENTOR" srcset="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8">
+                <ul class="ul_class_mentor">
+                  <li>HARSHIT SHAH 3</li>
+                  <li>Design -Brand</li>
+                </ul>
+                <p class="km" (click)="mentorDetails($event, 'me-3')">Know More</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 padlr0">
+          <a class="a_patcher" (click)="getMentor('HARSHIT SHAH 4')"  routerLink="/social">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 text-center">
+                <img class="mentor_img" src="./assets/images/prelaunchImages/Bluetest2.jpg" alt="MENTOR" srcset="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8">
+                <ul class="ul_class_mentor">
+                  <li>HARSHIT SHAH 4</li>
+                  <li>Design -Brand</li>
+                </ul>
+                <p class="km" (click)="mentorDetails($event, 'me-4')">Know More</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 padlr0">
+          <a class="a_patcher" (click)="getMentor('HARSHIT SHAH 5')"  routerLink="/social">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 text-center">
+                <img class="mentor_img" src="./assets/images/prelaunchImages/Bluetest2.jpg" alt="MENTOR" srcset="">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-8">
+                <ul class="ul_class_mentor">
+                  <li>HARSHIT SHAH 5</li>
+                  <li>Design -Brand</li>
+                </ul>
+                <p class="km" (click)="mentorDetails($event, 'me-5')">Know More</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mentor_detail_row">
+    <div class="me-1">
+      <i class="fa fa-close close_item" (click)="closeMentor()"></i>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="pull-left top-m-d">
+            <div class="pull-left">
+              <img src="./assets/images/prelaunchImages/Bluetest2.jpg">
+            </div>
+            <div class="pull-left top-m-d-n">
+              Harshit Shah
+            </div>
+          </div>
+          <h4>Co-founder</h4>
+          <p class="sbt">Company name</p>
+          <h4>Head - APAC & Board Advisor</h4>
+          <p class="sbt">sub title</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <ul class="list-mentor-detail">
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="me-2">
+      <i class="fa fa-close close_item" (click)="closeMentor()"></i>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="pull-left top-m-d">
+            <div class="pull-left">
+              <img src="./assets/images/prelaunchImages/Bluetest2.jpg">
+            </div>
+            <div class="pull-left top-m-d-n">
+              Harshit Shah
+            </div>
+          </div>
+          <h4>Co-founder</h4>
+          <p class="sbt">Company name</p>
+          <h4>Head - APAC & Board Advisor</h4>
+          <p class="sbt">sub title</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <ul class="list-mentor-detail">
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="me-3">
+      <i class="fa fa-close close_item" (click)="closeMentor()"></i>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="pull-left top-m-d">
+            <div class="pull-left">
+              <img src="./assets/images/prelaunchImages/Bluetest2.jpg">
+            </div>
+            <div class="pull-left top-m-d-n">
+              Harshit Shah
+            </div>
+          </div>
+          <h4>Co-founder</h4>
+          <p class="sbt">Company name</p>
+          <h4>Head - APAC & Board Advisor</h4>
+          <p class="sbt">sub title</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <ul class="list-mentor-detail">
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="me-4">
+      <i class="fa fa-close close_item" (click)="closeMentor()"></i>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="pull-left top-m-d">
+            <div class="pull-left">
+              <img src="./assets/images/prelaunchImages/Bluetest2.jpg">
+            </div>
+            <div class="pull-left top-m-d-n">
+              Harshit Shah
+            </div>
+          </div>
+          <h4>Co-founder</h4>
+          <p class="sbt">Company name</p>
+          <h4>Head - APAC & Board Advisor</h4>
+          <p class="sbt">sub title</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <ul class="list-mentor-detail">
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="me-5">
+      <i class="fa fa-close close_item" (click)="closeMentor()"></i>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="pull-left top-m-d">
+            <div class="pull-left">
+              <img src="./assets/images/prelaunchImages/Bluetest2.jpg">
+            </div>
+            <div class="pull-left top-m-d-n">
+              Harshit Shah
+            </div>
+          </div>
+          <h4>Co-founder</h4>
+          <p class="sbt">Company name</p>
+          <h4>Head - APAC & Board Advisor</h4>
+          <p class="sbt">sub title</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <ul class="list-mentor-detail">
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+            <li>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</mat-card>

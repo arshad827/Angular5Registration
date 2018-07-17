@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top navbar_custom">
+    <button type="button" (click)="toggle()" id="sidebarCollapse" class="btn btn-info navbar-btn btn_custom_opener_panel mat_d234">
+        <!-- <i class="glyphicon glyphicon-align-left opner_size_c"></i>
+         -->
+         <i class="material-icons material-icons_masd4r23">
+            apps
+            </i>
+    </button>  
+  <a class="navbar-brand" [routerLink]="['/']">BlueTie - Admin Panel</a>  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav pull-right">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logOut()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
